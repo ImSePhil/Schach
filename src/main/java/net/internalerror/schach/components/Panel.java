@@ -9,20 +9,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-/**
- * The type Panel.
- */
 public class Panel extends JPanel implements ActionListener, MouseListener, MouseMotionListener {
-    /**
-     * The Timer.
-     */
     Timer timer;
 
-    /**
-     * Instantiates a new Panel.
-     *
-     * @param size the size
-     */
     public Panel(Vector2 size) {
         setPreferredSize(new Dimension((int) size.getX(), (int) size.getY()));
     }
@@ -45,7 +34,7 @@ public class Panel extends JPanel implements ActionListener, MouseListener, Mous
     }
 
     private void initialize() {
-        new Rectangle().setSize(new Vector2(100,100));
+        new Rectangle().setSize(new Vector2(100, 100)).setFilled(true).setBordered(true).setRounded(true).setArc(new Vector2(25, 25)).setBorderColor(Color.BLACK).setFillColor(Color.RED);
     }
 
     @Override
