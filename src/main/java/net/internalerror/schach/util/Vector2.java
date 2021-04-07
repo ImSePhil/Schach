@@ -109,4 +109,9 @@ public class Vector2 implements Comparable<Vector2> {
     public void setY(float y) {
         this.y = y;
     }
+
+    public void set(float x, float y) {
+        this.setX(x);
+        this.setY(y);
+    }
 }
