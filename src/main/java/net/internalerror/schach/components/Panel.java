@@ -1,5 +1,6 @@
 package main.java.net.internalerror.schach.components;
 
+import main.java.net.internalerror.schach.components.shape.Rectangle;
 import main.java.net.internalerror.schach.graphics.Renderer;
 import main.java.net.internalerror.schach.listeners.MyMouseListener;
 import main.java.net.internalerror.schach.util.Vector2;
@@ -40,6 +41,11 @@ public class Panel extends JPanel implements ActionListener, MouseListener, Mous
         super.addNotify();
         timer = new Timer(8, this);
         timer.start();
+        initialize();
+    }
+
+    private void initialize() {
+        new Rectangle().setSize(new Vector2(100,100));
     }
 
     @Override

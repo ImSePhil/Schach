@@ -43,4 +43,8 @@ public class Renderer {
     private void sort() {
         Collections.sort(nodes);
     }
+
+    public static void registerNode(Node node) {
+        getSelf().nodes.add(node);
+    }
 }
