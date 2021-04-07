@@ -1,5 +1,6 @@
 package main.java.net.internalerror.schach.components;
 
+import main.java.net.internalerror.schach.components.shape.Rectangle;
 import main.java.net.internalerror.schach.graphics.Renderer;
 import main.java.net.internalerror.schach.listeners.MyMouseListener;
 import main.java.net.internalerror.schach.util.Vector2;
@@ -8,20 +9,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-/**
- * The type Panel.
- */
 public class Panel extends JPanel implements ActionListener, MouseListener, MouseMotionListener {
-    /**
-     * The Timer.
-     */
     Timer timer;
 
-    /**
-     * Instantiates a new Panel.
-     *
-     * @param size the size
-     */
     public Panel(Vector2 size) {
         setPreferredSize(new Dimension((int) size.getX(), (int) size.getY()));
     }
@@ -40,6 +30,11 @@ public class Panel extends JPanel implements ActionListener, MouseListener, Mous
         super.addNotify();
         timer = new Timer(8, this);
         timer.start();
+        initialize();
+    }
+
+    private void initialize() {
+        new Rectangle().setSize(new Vector2(100, 100)).setFilled(true).setBordered(true).setRounded(true).setArc(new Vector2(25, 25)).setBorderColor(Color.BLACK).setFillColor(Color.RED);
     }
 
     @Override
