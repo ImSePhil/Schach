@@ -31,6 +31,8 @@ public class Panel extends JPanel implements ActionListener, MouseListener, Mous
         super.paintComponent(g);
         Graphics2D graphics2D = (Graphics2D) g;
         Renderer.render(graphics2D);
+        addMouseListener(this);
+        addMouseMotionListener(this);
     }
 
     @Override
