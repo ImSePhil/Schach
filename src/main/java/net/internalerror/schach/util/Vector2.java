@@ -69,14 +69,41 @@ public class Vector2 implements Comparable<Vector2> {
         return 0;
     }
 
+    public boolean isBetween(Vector2 minPosition, Vector2 maxPosition) {
+        if (this.x > maxPosition.x) return false;
+        if (this.x < minPosition.x) return false;
+        if (this.y > maxPosition.y) return false;
+        if (this.y < minPosition.y) return false;
+
+
+        return true;
+    }
+
     /**
      * Add.
      *
      * @param other the other
      */
-    public void add(Vector2 other) {
+    public Vector2 add(Vector2 other) {
         setX(getX() + other.getX());
         setY(getY() + other.getY());
+        return this;
+    }
+
+    public Vector2 plus(Vector2 other) {
+        return new Vector2(other.x + x, other.y + y);
+    }
+
+    public boolean isHigherThan(Vector2 other) {
+        if (x < other.x) return false;
+        if (y < other.y) return false;
+        return true;
+    }
+
+    public boolean isLowerThan(Vector2 other) {
+        if (x > other.x) return false;
+        if (y > other.y) return false;
+        return true;
     }
 
     /**
@@ -118,5 +145,18 @@ public class Vector2 implements Comparable<Vector2> {
     public void set(float x, float y) {
         this.setX(x);
         this.setY(y);
+    }
+
+    public void set(float size) {
+        this.setX(size);
+        this.setY(size);
+    }
+
+    @Override
+    public String toString() {
+        return "Vector2{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

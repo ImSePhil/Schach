@@ -34,7 +34,7 @@ public class Panel extends JPanel implements ActionListener, MouseListener, Mous
     }
 
     private void initialize() {
-        new Button();
+        new Button().setPosition(new Vector2(100)).setClickColor(Color.red).setHoverColor(Color.green);
     }
 
     @Override

@@ -2,14 +2,19 @@ package main.java.net.internalerror.schach.components.functional;
 
 import main.java.net.internalerror.schach.components.Node;
 import main.java.net.internalerror.schach.components.shape.Rectangle;
+import main.java.net.internalerror.schach.listeners.MyMouseListener;
 import main.java.net.internalerror.schach.util.Vector2;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class Button extends Node {
     private Label label = new Label();
     private Rectangle rectangle = new Rectangle();
     private Vector2 size = Vector2.ZERO;
+    private Color clickColor;
+    private Color hoverColor;
+    private Color defaultColor;
 
     public Vector2 getSize() {
         return size;
@@ -27,6 +32,7 @@ public class Button extends Node {
         this.setDepth(1);
         this.rectangle.setBordered(true);
         this.rectangle.setBorderColor(Color.black);
+        this.defaultColor = rectangle.getFillColor();
     }
 
     @Override
@@ -39,7 +45,33 @@ public class Button extends Node {
 
     @Override
     public void render(Graphics2D graphics2D) {
+        boolean hover = MyMouseListener.getLastRelativePosition().isBetween(position, position.plus(size));
+        if (hover) {
+            boolean clicked = MyMouseListener.isButtonPressed(MouseEvent.BUTTON1);
+            rectangle.setFillColor(hoverColor);
+            if (clicked)
+                rectangle.setFillColor(clickColor);
+        } else {
+            rectangle.setFillColor(defaultColor);
+        }
+    }
 
+    public Color getClickColor() {
+        return clickColor;
+    }
+
+    public Button setClickColor(Color clickColor) {
+        this.clickColor = clickColor;
+        return this;
+    }
+
+    public Color getHoverColor() {
+        return hoverColor;
+    }
+
+    public Button setHoverColor(Color hoverColor) {
+        this.hoverColor = hoverColor;
+        return this;
     }
 
     @Override
@@ -51,14 +83,17 @@ public class Button extends Node {
     }
 
     public Button configureRectangle(Vector2 position, Vector2 size, Vector2 arc, Color borderColor, Color fillColor, Boolean rounded, Boolean filled, Boolean bordered) {
-        if(size != null)this.rectangle.setSize(size);
-        if(arc != null)this.rectangle.setArc(arc);
-        if(borderColor != null)this.rectangle.setBorderColor(borderColor);
-        if(fillColor != null)this.rectangle.setFillColor(fillColor);
-        if(rounded != null)this.rectangle.setRounded(rounded);
-        if(filled != null)this.rectangle.setFilled(filled);
-        if(bordered != null)this.rectangle.setBordered(bordered);
-        if(position != null)this.rectangle.setPosition(position);
+        if (size != null) this.rectangle.setSize(size);
+        if (arc != null) this.rectangle.setArc(arc);
+        if (borderColor != null) this.rectangle.setBorderColor(borderColor);
+        if (fillColor != null) {
+            this.rectangle.setFillColor(fillColor);
+            this.defaultColor = fillColor;
+        } ;
+        if (rounded != null) this.rectangle.setRounded(rounded);
+        if (filled != null) this.rectangle.setFilled(filled);
+        if (bordered != null) this.rectangle.setBordered(bordered);
+        if (position != null) this.rectangle.setPosition(position);
         return this;
     }
 
