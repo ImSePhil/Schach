@@ -1,11 +1,13 @@
 package main.java.net.internalerror.schach.graphics;
 
 import main.java.net.internalerror.schach.components.Node;
+import main.java.net.internalerror.schach.window.Window;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
 
 /**
  * The type Renderer.
@@ -13,7 +15,6 @@ import java.util.List;
 public class Renderer {
     private static Renderer self;
     private final List<Node> nodes;
-    private Graphics2D graphics2D;
 
     /**
      * Gets self.
@@ -36,12 +37,8 @@ public class Renderer {
      * @param graphics2D the graphics 2 d
      */
     public static void render(Graphics2D graphics2D) {
-        getSelf().sort();
+        Collections.sort(getSelf().nodes);
         getSelf().nodes.forEach(n -> n.render(graphics2D));
-    }
-
-    private void sort() {
-        Collections.sort(nodes);
     }
 
     public static void registerNode(Node node) {

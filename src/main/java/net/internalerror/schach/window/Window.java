@@ -5,6 +5,7 @@ import main.java.net.internalerror.schach.util.Vector2;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.logging.Logger;
 
 /**
  * The type Window.
@@ -17,6 +18,8 @@ public class Window extends JFrame {
      * @param name       the name
      * @param windowSize the window size
      */
+    public static final Logger LOGGER = Logger.getLogger("Window");
+
     public Window(String name, Vector2 windowSize) {
         super(name);
         setLayout(new BorderLayout());
