@@ -28,6 +28,8 @@ public class Label extends Node {
         this.position = position;
     }
 
+
+
     @Override
     public Label setPosition(Vector2 position) {
         this.position = position;

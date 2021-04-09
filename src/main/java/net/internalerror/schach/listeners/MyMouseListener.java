@@ -26,23 +26,23 @@ public class MyMouseListener {
     }
 
     public static Vector2 getLastAbsoluteClick() {
-        //return getSelf().lastAbsoluteClick;
-        return null;
+        return getSelf().lastAbsoluteClick;
+
     }
 
     public static Vector2 getLastRelativeClick() {
-        //return getSelf().lastRelativeClick;
-        return null;
+        return getSelf().lastRelativeClick;
+
     }
 
     public static Vector2 getLastAbsolutePosition() {
-        //return getSelf().lastAbsolutePosition;
-        return null;
+        return getSelf().lastAbsolutePosition;
+
     }
 
     public static Vector2 getLastRelativePosition() {
-        //return getSelf().lastRelativePosition;
-        return null;
+        return getSelf().lastRelativePosition;
+
     }
 
     public static MyMouseListener getSelf() {

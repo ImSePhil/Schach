@@ -12,6 +12,8 @@ public class Tile extends Node implements Sizable {
     private Rectangle background;
     private Rectangle foreground;
     private Vector2 size = new Vector2();
+    private Color defaultColor;
+    private Color highlightColor;
 
     public Tile() {
         background = new Rectangle();
@@ -50,6 +52,7 @@ public class Tile extends Node implements Sizable {
         if (filled != null) this.foreground.setFilled(filled);
         if (bordered != null) this.foreground.setBordered(bordered);
         if (position != null) this.foreground.setPosition(position);
+        defaultColor = foreground.getFillColor();
         return this;
     }
 
@@ -63,5 +66,16 @@ public class Tile extends Node implements Sizable {
         if (bordered != null) this.background.setBordered(bordered);
         if (position != null) this.background.setPosition(position);
         return this;
+    }
+
+    public void highlight(boolean highlight) {
+        if (highlight) {
+            int r = defaultColor.getRed() - 50;
+            int g = defaultColor.getGreen();
+            int b = defaultColor.getBlue() - 50;
+            foreground.setFillColor(new Color(r, g, b));
+        } else {
+            foreground.setFillColor(defaultColor);
+        }
     }
 }
