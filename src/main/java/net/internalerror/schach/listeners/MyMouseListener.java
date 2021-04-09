@@ -14,10 +14,10 @@ public class MyMouseListener {
 
     private MyMouseListener() {
         this.buttons = new boolean[5];
-        lastAbsoluteClick = Vector2.ZERO;
-        lastRelativeClick = Vector2.ZERO;
-        lastAbsolutePosition = Vector2.ZERO;
-        lastRelativePosition = Vector2.ZERO;
+        lastAbsoluteClick = Vector2.ZERO();
+        lastRelativeClick = Vector2.ZERO();
+        lastAbsolutePosition = Vector2.ZERO();
+        lastRelativePosition = Vector2.ZERO();
     }
 
     public static boolean isButtonPressed(int button) {
@@ -26,19 +26,23 @@ public class MyMouseListener {
     }
 
     public static Vector2 getLastAbsoluteClick() {
-        return getSelf().lastAbsoluteClick;
+        //return getSelf().lastAbsoluteClick;
+        return null;
     }
 
     public static Vector2 getLastRelativeClick() {
-        return getSelf().lastRelativeClick;
+        //return getSelf().lastRelativeClick;
+        return null;
     }
 
     public static Vector2 getLastAbsolutePosition() {
-        return getSelf().lastAbsolutePosition;
+        //return getSelf().lastAbsolutePosition;
+        return null;
     }
 
     public static Vector2 getLastRelativePosition() {
-        return getSelf().lastRelativePosition;
+        //return getSelf().lastRelativePosition;
+        return null;
     }
 
     public static MyMouseListener getSelf() {
