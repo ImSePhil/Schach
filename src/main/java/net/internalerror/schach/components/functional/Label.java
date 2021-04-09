@@ -19,6 +19,15 @@ public class Label extends Node {
         this.fontColor = Color.BLACK;
     }
 
+    public Label(Vector2 position, String text, Font font, Color fontColor, int fontSize, Vector2 size) {
+        this.text = text;
+        this.font = font;
+        this.fontColor = fontColor;
+        this.fontSize = fontSize;
+        this.size = size;
+        this.position = position;
+    }
+
     @Override
     public Label setPosition(Vector2 position) {
         this.position = position;

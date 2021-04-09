@@ -11,7 +11,7 @@ public class Rectangle extends Node {
     protected Color borderColor;
     protected Color fillColor;
     protected boolean rounded = false;
-    protected boolean filled = false;
+    protected boolean filled;
     protected boolean bordered = false;
 
     public Rectangle() {
@@ -19,6 +19,17 @@ public class Rectangle extends Node {
         this.filled = true;
         this.fillColor = Color.gray;
         this.position = Vector2.ZERO;
+    }
+
+    public Rectangle(Vector2 position, Vector2 size, Vector2 arc, Color borderColor, Color fillColor, boolean rounded, boolean filled, boolean bordered) {
+        this.size = size;
+        this.arc = arc;
+        this.borderColor = borderColor;
+        this.fillColor = fillColor;
+        this.rounded = rounded;
+        this.filled = filled;
+        this.bordered = bordered;
+        this.position = position;
     }
 
     public Rectangle setSize(Vector2 size) {
