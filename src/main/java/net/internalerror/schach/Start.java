@@ -13,6 +13,6 @@ public class Start {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        new Window("Schach", new Vector2(400, 400));
+        new Window("Schach", new Vector2(799, 799));
     }
 }

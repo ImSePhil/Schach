@@ -18,7 +18,7 @@ public class Rectangle extends Node {
         this.size = new Vector2(100);
         this.filled = true;
         this.fillColor = Color.gray;
-        this.position = Vector2.ZERO;
+        this.position = Vector2.ZERO();
     }
 
     public Rectangle(Vector2 position, Vector2 size, Vector2 arc, Color borderColor, Color fillColor, boolean rounded, boolean filled, boolean bordered) {
