@@ -11,7 +11,7 @@ public abstract class Node implements Comparable<Node> {
     protected int depth = 0;
 
     protected Node() {
-        position = Vector2.ZERO;
+        position = Vector2.ZERO();
         Renderer.registerNode(this);
     }
 

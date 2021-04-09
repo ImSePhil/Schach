@@ -20,6 +20,7 @@ public class Vector2Test {
         testVector = new Vector2(15, 15);
     }
 
+
     @Test
     public void isBetween() {
         LOGGER.log(Level.INFO, "checking if TestVector is between (10, 10) and (20, 20)");
@@ -107,5 +108,23 @@ public class Vector2Test {
         testVector.set(100);
         Assert.assertEquals(100.0f, testVector.getX(), 0.0f);
         Assert.assertEquals(100.0f, testVector.getY(), 0.0f);
+    }
+
+    @Test
+    public void multiplyBy() {
+        LOGGER.log(Level.INFO, "multiplying TestVector by 3");
+        testVector.set(15, 25);
+        testVector.multiplyBy(5);
+        Assert.assertEquals(5 * 15, testVector.getX(), 0);
+        Assert.assertEquals(5 * 25, testVector.getY(), 0);
+    }
+
+    @Test
+    public void divideBy() {
+        LOGGER.log(Level.INFO, "dividing TestVector by 7");
+        testVector.set(49, 63);
+        testVector.divideBy(7);
+        Assert.assertEquals(49 / 7, testVector.getX(), 0);
+        Assert.assertEquals(63 / 7, testVector.getY(), 0);
     }
 }

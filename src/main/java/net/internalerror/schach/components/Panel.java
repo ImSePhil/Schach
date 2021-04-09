@@ -1,6 +1,7 @@
 package main.java.net.internalerror.schach.components;
 
 import main.java.net.internalerror.schach.components.functional.Button;
+import main.java.net.internalerror.schach.game.local.components.ChessBoard;
 import main.java.net.internalerror.schach.graphics.Renderer;
 import main.java.net.internalerror.schach.listeners.MyMouseListener;
 import main.java.net.internalerror.schach.util.Vector2;
@@ -34,7 +35,7 @@ public class Panel extends JPanel implements ActionListener, MouseListener, Mous
     }
 
     private void initialize() {
-        new Button().setPosition(new Vector2(100)).setClickColor(Color.red).setHoverColor(Color.green);
+        new ChessBoard();
     }
 
     @Override

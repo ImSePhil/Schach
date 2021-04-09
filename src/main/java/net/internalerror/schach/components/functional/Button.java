@@ -11,7 +11,7 @@ import java.awt.event.MouseEvent;
 public class Button extends Node {
     private Label label = new Label();
     private Rectangle rectangle = new Rectangle();
-    private Vector2 size = Vector2.ZERO;
+    private Vector2 size = Vector2.ZERO();
     private Color clickColor;
     private Color hoverColor;
     private Color defaultColor;

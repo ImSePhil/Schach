@@ -10,23 +10,37 @@ public class Vector2 implements Comparable<Vector2> {
     /**
      * The constant LEFT.
      */
-    public static final Vector2 LEFT = new Vector2(-1, 0);
+    public static final Vector2 LEFT() {
+        return new Vector2(-1, 0);
+    }
+
     /**
      * The constant RIGHT.
      */
-    public static final Vector2 RIGHT = new Vector2(1, 0);
+    public static final Vector2 RIGHT() {
+        return new Vector2(-1, 0);
+    }
+
     /**
      * The constant ZERO.
      */
-    public static final Vector2 ZERO = new Vector2(0, 0);
+    public static final Vector2 ZERO() {
+        return new Vector2(-1, 0);
+    }
+
     /**
      * The constant DOWN.
      */
-    public static final Vector2 DOWN = new Vector2(0, 1);
+    public static final Vector2 DOWN() {
+        return new Vector2(-1, 0);
+    }
+
     /**
      * The constant UP.
      */
-    public static final Vector2 UP = new Vector2(0, -1);
+    public static final Vector2 UP() {
+        return new Vector2(-1, 0);
+    }
 
     /**
      * Instantiates a new Vector 2.
@@ -74,10 +88,34 @@ public class Vector2 implements Comparable<Vector2> {
         if (this.x < minPosition.x) return false;
         if (this.y > maxPosition.y) return false;
         if (this.y < minPosition.y) return false;
-
-
         return true;
     }
+
+    public Vector2 getMultipliedBy(float multiplier) {
+        Vector2 multiplied = new Vector2(x, y);
+        multiplied.x *= multiplier;
+        multiplied.y *= multiplier;
+        return multiplied;
+    }
+
+    public Vector2 multiplyBy(float multiplier) {
+        x *= multiplier;
+        y *= multiplier;
+        return this;
+    }
+
+    public Vector2 getDividedBy(float divider) {
+        Vector2 multiplied = new Vector2(x, y);
+        multiplied.x /= divider;
+        multiplied.y /= divider;
+        return multiplied;
+    }
+
+    public void divideBy(float divider) {
+        x /= divider;
+        y /= divider;
+    }
+
 
     /**
      * Add.

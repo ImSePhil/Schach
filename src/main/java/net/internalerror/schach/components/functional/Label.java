@@ -15,7 +15,7 @@ public class Label extends Node {
     public Label() {
         this.size = new Vector2(50,50);
         this.text = "Hello world!";
-        this.position = Vector2.ZERO;
+        this.position = Vector2.ZERO();
         this.fontColor = Color.BLACK;
     }
 
