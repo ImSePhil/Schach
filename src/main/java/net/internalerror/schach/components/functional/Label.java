@@ -12,6 +12,12 @@ public class Label extends Node {
     private int fontSize;
     private Vector2 size;
 
+    public Label() {
+        this.size = new Vector2(50,50);
+        this.text = "Hello world!";
+        this.position = Vector2.ZERO;
+        this.fontColor = Color.BLACK;
+    }
 
     @Override
     public Label setPosition(Vector2 position) {

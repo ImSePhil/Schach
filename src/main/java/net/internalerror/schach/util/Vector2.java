@@ -36,6 +36,11 @@ public class Vector2 implements Comparable<Vector2> {
         this.setY(0.0f);
     }
 
+    public Vector2(float size) {
+        this.x = size;
+        this.y = size;
+    }
+
     /**
      * Instantiates a new Vector 2.
      *
