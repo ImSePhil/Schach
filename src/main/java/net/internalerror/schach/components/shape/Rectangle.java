@@ -15,7 +15,10 @@ public class Rectangle extends Node {
     protected boolean bordered = false;
 
     public Rectangle() {
-        this.size = Vector2.ZERO;
+        this.size = new Vector2(100);
+        this.filled = true;
+        this.fillColor = Color.gray;
+        this.position = Vector2.ZERO;
     }
 
     public Rectangle setSize(Vector2 size) {

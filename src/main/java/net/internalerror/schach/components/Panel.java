@@ -1,5 +1,6 @@
 package main.java.net.internalerror.schach.components;
 
+import main.java.net.internalerror.schach.components.functional.Label;
 import main.java.net.internalerror.schach.components.shape.Rectangle;
 import main.java.net.internalerror.schach.graphics.Renderer;
 import main.java.net.internalerror.schach.listeners.MyMouseListener;
@@ -34,7 +35,7 @@ public class Panel extends JPanel implements ActionListener, MouseListener, Mous
     }
 
     private void initialize() {
-        new Rectangle().setSize(new Vector2(100, 100)).setFilled(true).setBordered(true).setRounded(true).setArc(new Vector2(25, 25)).setBorderColor(Color.BLACK).setFillColor(Color.RED);
+
     }
 
     @Override
